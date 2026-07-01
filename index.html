@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Urs Kläusler · Self-Hosted Services</title>
-<meta name="description" content="Portfolio selbst gehosteter Dienste auf einem Raspberry-Pi-Homeserver – KI, Buchhaltung, Lernen, Monitoring.">
+<meta name="description" content="Portfolio selbst gehosteter Dienste auf einem Raspberry-Pi-Homeserver – KI, Buchhaltung, Lernen, Smart Home, Monitoring.">
 <style>
   :root{
     --bg:#0b0f17; --bg2:#111726; --card:#151d2e; --card-h:#1b2740;
@@ -40,24 +40,34 @@
   .section-h h2{font-size:1.5rem;letter-spacing:-.01em}
   .section-h span{color:var(--dim);font-size:.9rem}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;padding-bottom:20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding-bottom:20px}
   .card{
     background:linear-gradient(180deg,var(--card),#121a2a);border:1px solid var(--line);
-    border-radius:18px;padding:26px 24px;transition:.22s;position:relative;overflow:hidden;
+    border-radius:18px;transition:.22s;position:relative;overflow:hidden;
     display:flex;flex-direction:column;
   }
-  .card:hover{transform:translateY(-4px);border-color:#3a4a6b;background:linear-gradient(180deg,var(--card-h),#141d30)}
-  .card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:.0;transition:.22s}
-  .card:hover::before{opacity:1}
-  .ico{font-size:1.7rem;width:52px;height:52px;display:grid;place-items:center;border-radius:13px;
-    background:var(--bg2);border:1px solid var(--line);margin-bottom:16px}
-  .card h3{font-size:1.22rem;margin-bottom:8px}
-  .card p{color:var(--mut);font-size:.96rem;flex:1}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-  .tag{font-size:.74rem;color:var(--dim);border:1px solid var(--line);padding:3px 10px;border-radius:7px;background:#0e1524}
-  .port{position:absolute;top:22px;right:22px;font-size:.72rem;color:var(--acc2);
-    font-family:ui-monospace,Menlo,Consolas,monospace;background:#0e1a20;border:1px solid #1d3a3a;
-    padding:3px 9px;border-radius:7px}
+  .card:hover{transform:translateY(-4px);border-color:#3a4a6b}
+  .card:hover .shot img{transform:scale(1.04)}
+
+  .shot{position:relative;height:188px;overflow:hidden;border-bottom:1px solid var(--line);
+    background:var(--bg2);cursor:zoom-in}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;
+    display:block;transition:transform .35s}
+  .shot.mid img{object-position:center}
+  .shot .ph{width:100%;height:100%;display:grid;place-items:center;font-size:3.2rem;
+    background:radial-gradient(120% 120% at 50% 0%,#1c2a44 0%,#0e1524 70%)}
+  .shot .badge{position:absolute;left:12px;bottom:12px;font-size:.68rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--dim);background:rgba(8,12,20,.72);
+    border:1px solid var(--line);padding:3px 9px;border-radius:6px;backdrop-filter:blur(3px)}
+  .port{position:absolute;top:12px;right:12px;font-size:.72rem;color:var(--acc2);
+    font-family:ui-monospace,Menlo,Consolas,monospace;background:rgba(8,20,24,.8);border:1px solid #1d3a3a;
+    padding:3px 9px;border-radius:7px;backdrop-filter:blur(3px)}
+
+  .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:1.18rem;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:.94rem;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .tag{font-size:.73rem;color:var(--dim);border:1px solid var(--line);padding:3px 10px;border-radius:7px;background:#0e1524}
 
   .stack{margin-top:70px;padding:40px 0 10px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
@@ -66,6 +76,14 @@
   footer{margin-top:80px;border-top:1px solid var(--line);padding:36px 0 60px;color:var(--dim);font-size:.9rem}
   footer a{color:var(--acc)}
   .note{margin-top:8px;font-size:.82rem;color:var(--dim)}
+
+  /* lightbox */
+  #lb{position:fixed;inset:0;background:rgba(6,9,15,.92);display:none;place-items:center;
+    z-index:50;padding:30px;cursor:zoom-out;backdrop-filter:blur(4px)}
+  #lb.on{display:grid}
+  #lb img{max-width:100%;max-height:100%;border-radius:12px;border:1px solid var(--line);
+    box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  #lb .cap{position:fixed;top:22px;left:0;right:0;text-align:center;color:var(--mut);font-size:.9rem}
 </style>
 </head>
 <body>
@@ -74,9 +92,9 @@
     <span class="eyebrow"><span class="dot"></span>Self-Hosted · Raspberry Pi Homeserver</span>
     <h1>Ich betreibe meine eigene <span class="g">digitale Infrastruktur</span>.</h1>
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
-      bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
+      und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">8</div><div class="l">Dienste</div></div>
+      <div><div class="n">10</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -85,78 +103,107 @@
 </header>
 
 <main class="wrap">
-  <div class="section-h"><h2>Dienste</h2><span>Was auf dem Server läuft</span></div>
+  <div class="section-h"><h2>Dienste</h2><span>Klick auf ein Bild für die Großansicht</span></div>
   <div class="grid">
 
     <div class="card">
-      <span class="port">:7860</span>
-      <div class="ico">🧠</div>
-      <h3>aihub</h3>
-      <p>Zentraler KI-Hub mit Chat-Web-UI, Sprach- und Videobots sowie Anbindung an Telegram,
-        Discord, Matrix, Signal und Jitsi. Text-to-Speech via Piper, Realtime über LiveKit.</p>
-      <div class="tags"><span class="tag">Gradio</span><span class="tag">Ollama</span><span class="tag">LiveKit</span><span class="tag">Jitsi</span><span class="tag">Piper TTS</span></div>
+      <div class="shot"><span class="port">:7860</span><img src="shots/aihub.png" alt="aihub – KI-Chat-Oberfläche"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>aihub</h3>
+        <p>Zentraler KI-Hub mit Chat-Web-UI, Sprach- und Videobots sowie Anbindung an Telegram,
+          Discord, Matrix, Signal und Jitsi. Tools, RAG-Wissensspeicher, Text-to-Speech via Piper.</p>
+        <div class="tags"><span class="tag">Gradio</span><span class="tag">Ollama</span><span class="tag">LiveKit</span><span class="tag">Jitsi</span><span class="tag">Piper TTS</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <div class="ico">🤖</div>
-      <h3>aiagent</h3>
-      <p>Lokaler KI-Agent mit Web-UI, Multi-User- und Multi-Projekt-Betrieb. Jede Instanz isoliert
-        über eigene Docker-Volumes, Hostname-Routing per Caddy, reproduzierbare Nix-Umgebung.</p>
-      <div class="tags"><span class="tag">Docker</span><span class="tag">Caddy</span><span class="tag">Nix</span><span class="tag">Multi-Tenant</span></div>
+      <div class="shot mid"><span class="port">:3000</span><img src="shots/aiagent.png" alt="aiagent – Portal"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>aiagent</h3>
+        <p>Lokaler KI-Coding-Agent mit Web-UI, Multi-User- und Multi-Projekt-Betrieb. Jede Instanz
+          isoliert über eigene Docker-Volumes, Hostname-Routing per Caddy, reproduzierbare Nix-Umgebung.</p>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Caddy</span><span class="tag">Nix</span><span class="tag">Multi-Tenant</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:8480</span>
-      <div class="ico">💰</div>
-      <h3>finance</h3>
-      <p>Buchhaltungs- und Dokumenten-Stack: paperless-ngx nimmt alle Belege per OCR auf, eine KI
-        klassifiziert und bucht sie in Firefly III. KI-Kosten werden automatisch erfasst, Push-Reports via Gotify.</p>
-      <div class="tags"><span class="tag">Firefly III</span><span class="tag">paperless-ngx</span><span class="tag">WireGuard</span><span class="tag">Gotify</span></div>
+      <div class="shot mid"><span class="port">:8480</span><img src="shots/finance.png" alt="finance – Firefly III"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>finance</h3>
+        <p>Buchhaltungs- und Dokumenten-Stack: paperless-ngx nimmt alle Belege per OCR auf, eine KI
+          klassifiziert und bucht sie in Firefly III. KI-Kosten automatisch erfasst, Push-Reports via Gotify.</p>
+        <div class="tags"><span class="tag">Firefly III</span><span class="tag">paperless-ngx</span><span class="tag">WireGuard</span><span class="tag">Gotify</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:8090</span>
-      <div class="ico">🎯</div>
-      <h3>skilltest · Kompetenz-Radar</h3>
-      <p>Adaptiver Kompetenztest für Menschen: misst Stärken über sieben Gebiete, mit KI-Lehrer,
-        Training, Badges und Bestenlisten. Inklusive Lehrer- und Klassen-Modus für Nachhilfe.</p>
-      <div class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">KI-Tutor</span></div>
+      <div class="shot mid"><span class="port">:8090</span><img src="shots/skilltest.png" alt="skilltest – Kompetenz-Radar"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>skilltest · Kompetenz-Radar</h3>
+        <p>Adaptiver Kompetenztest für Menschen: misst Stärken über sieben Gebiete, mit KI-Lehrer,
+          Training, Badges und Bestenlisten. Inklusive Lehrer- und Klassen-Modus für Nachhilfe.</p>
+        <div class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">KI-Tutor</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:8470</span>
-      <div class="ico">📚</div>
-      <h3>notebookllm</h3>
-      <p>NotebookLM-Klon: grounded RAG mit Inline-Zitaten und pro Notebook isolierter Vektor-Collection.
-        Voll mehrsprachig (DE/EN/IT/FR) – antwortet stets in der Sprache der Frage.</p>
-      <div class="tags"><span class="tag">RAG</span><span class="tag">bge-m3</span><span class="tag">Vektor-DB</span><span class="tag">Zitate</span></div>
+      <div class="shot mid"><span class="port">:8470</span><img src="shots/notebookllm.png" alt="notebookllm – NotebookLM-Clone"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>notebookllm</h3>
+        <p>NotebookLM-Klon: grounded RAG mit Inline-Zitaten und pro Notebook isolierter Vektor-Collection.
+          Voll mehrsprachig (DE/EN/IT/FR) – antwortet stets in der Sprache der Frage.</p>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">bge-m3</span><span class="tag">Vektor-DB</span><span class="tag">Zitate</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:80</span>
-      <div class="ico">📦</div>
-      <h3>inventar</h3>
-      <p>Inventarverwaltung mit FastAPI-Backend und eigenem Frontend. Persistenz in MariaDB,
-        als arm64-Images für den Raspberry Pi gebaut und via Docker Compose bereitgestellt.</p>
-      <div class="tags"><span class="tag">FastAPI</span><span class="tag">MariaDB</span><span class="tag">arm64</span></div>
+      <div class="shot"><span class="port">:19999</span><img src="shots/netdata.png" alt="netdata – Monitoring-Dashboard"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>netdata</h3>
+        <p>Echtzeit-Monitoring des Homeservers – CPU, RAM, Disk, Netzwerk und Container-Metriken
+          sekundengenau, mit langfristiger Speicherung, ohne externe Cloud.</p>
+        <div class="tags"><span class="tag">Monitoring</span><span class="tag">Metriken</span><span class="tag">Realtime</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:19999</span>
-      <div class="ico">📊</div>
-      <h3>netdata</h3>
-      <p>Echtzeit-Monitoring des Homeservers – CPU, RAM, Disk, Netzwerk und Container-Metriken
-        sekundengenau, ohne externe Cloud.</p>
-      <div class="tags"><span class="tag">Monitoring</span><span class="tag">Metriken</span><span class="tag">Realtime</span></div>
+      <div class="shot"><span class="port">:80</span><div class="ph">📦</div></div>
+      <div class="body">
+        <h3>inventar</h3>
+        <p>Inventarverwaltung mit FastAPI-Backend und eigenem Frontend. Persistenz in MariaDB,
+          als arm64-Images für den Raspberry Pi gebaut und via Docker Compose bereitgestellt.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">MariaDB</span><span class="tag">arm64</span></div>
+      </div>
     </div>
 
     <div class="card">
-      <span class="port">:9000</span>
-      <div class="ico">🐳</div>
-      <h3>portainer</h3>
-      <p>Web-Oberfläche zur Verwaltung sämtlicher Docker-Container, Volumes und Netzwerke –
-        Deployments und Logs auf einen Blick.</p>
-      <div class="tags"><span class="tag">Docker</span><span class="tag">Container</span><span class="tag">Ops</span></div>
+      <div class="shot"><span class="port">:9000</span><div class="ph">🐳</div></div>
+      <div class="body">
+        <h3>portainer</h3>
+        <p>Web-Oberfläche zur Verwaltung sämtlicher Docker-Container, Volumes und Netzwerke –
+          Deployments und Logs auf einen Blick.</p>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Container</span><span class="tag">Ops</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shot"><div class="ph">🏠</div></div>
+      <div class="body">
+        <h3>Home Assistant</h3>
+        <p>Zentrale Smart-Home-Steuerung: Geräte, Sensoren, Szenen und Automationen an einem Ort,
+          mit anpassbaren Dashboards. Vollständig lokal, ohne Hersteller-Cloud.</p>
+        <div class="tags"><span class="tag">Smart Home</span><span class="tag">Automationen</span><span class="tag">Lokal</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="shot"><div class="ph">🛡️</div></div>
+      <div class="body">
+        <h3>Pi-hole</h3>
+        <p>Netzwerkweiter Werbe- und Tracker-Blocker als DNS-Sinkhole. Schützt alle Geräte im WLAN
+          zentral – schneller, sauberer und privater surfen ohne Client-Software.</p>
+        <div class="tags"><span class="tag">DNS</span><span class="tag">Ad-Blocking</span><span class="tag">Privacy</span></div>
+      </div>
     </div>
 
   </div>
@@ -181,9 +228,19 @@
   <div class="wrap">
     <div>© <span id="y"></span> Urs Kläusler · <a href="https://github.com/DJSwiss">github.com/DJSwiss</a></div>
     <div class="note">Alle Dienste laufen self-hosted auf einem Raspberry-Pi-Homeserver im lokalen Netz.
-      Ports dienen nur zur Orientierung und sind nicht öffentlich erreichbar.</div>
+      Screenshots stammen aus dem laufenden Betrieb; Ports dienen der Orientierung und sind nicht öffentlich erreichbar.</div>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+<div id="lb"><div class="cap" id="lbcap"></div><img id="lbimg" alt=""></div>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var lb=document.getElementById('lb'),lbi=document.getElementById('lbimg'),lbc=document.getElementById('lbcap');
+  document.querySelectorAll('.shot img').forEach(function(im){
+    im.parentElement.addEventListener('click',function(){lbi.src=im.src;lbc.textContent=im.alt;lb.classList.add('on');});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on');lbi.src='';});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+</script>
 </body>
 </html>
