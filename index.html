@@ -72,6 +72,8 @@
   .stack{margin-top:70px;padding:40px 0 10px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   .chip{border:1px solid var(--line);background:var(--bg2);padding:9px 16px;border-radius:11px;color:var(--mut);font-size:.9rem}
+  a.chip{text-decoration:none;transition:border-color .15s,color .15s,transform .15s;display:inline-block}
+  a.chip:hover{border-color:#3a4a6b;color:#cdd6e4;transform:translateY(-2px)}
 
   .devices{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;align-items:flex-end;margin-top:26px}
   .device{background:#0a0e16;border:1px solid var(--line);border-radius:22px;padding:10px;
@@ -258,15 +260,15 @@
   <section class="stack">
     <div class="section-h"><h2>Technik</h2><span>Womit alles gebaut ist</span></div>
     <div class="chips">
-      <span class="chip">Raspberry Pi</span>
-      <span class="chip">Docker &amp; Compose</span>
-      <span class="chip">Ollama (lokale LLMs)</span>
-      <span class="chip">Python · Flask · FastAPI</span>
-      <span class="chip">Nix</span>
-      <span class="chip">Caddy</span>
-      <span class="chip">PostgreSQL · MariaDB · SQLite</span>
-      <span class="chip">WireGuard</span>
-      <span class="chip">Linux</span>
+      <a class="chip" href="https://www.raspberrypi.com/" target="_blank" rel="noopener">Raspberry Pi</a>
+      <a class="chip" href="https://docs.docker.com/compose/" target="_blank" rel="noopener">Docker &amp; Compose</a>
+      <a class="chip" href="https://ollama.com/" target="_blank" rel="noopener">Ollama (lokale LLMs)</a>
+      <a class="chip" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">Python · Flask · FastAPI</a>
+      <a class="chip" href="https://nixos.org/" target="_blank" rel="noopener">Nix</a>
+      <a class="chip" href="https://caddyserver.com/" target="_blank" rel="noopener">Caddy</a>
+      <a class="chip" href="https://mariadb.org/" target="_blank" rel="noopener">PostgreSQL · MariaDB · SQLite</a>
+      <a class="chip" href="https://www.wireguard.com/" target="_blank" rel="noopener">WireGuard</a>
+      <a class="chip" href="https://kernel.org/" target="_blank" rel="noopener">Linux</a>
     </div>
   </section>
 </main>
