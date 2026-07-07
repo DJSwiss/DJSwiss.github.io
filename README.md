@@ -19,6 +19,7 @@ Vorzeige-Seite meiner selbst gehosteten Dienste auf einem Raspberry-Pi-Homeserve
 | **Home Assistant** | Smart-Home-Steuerung, lokal | Automationen · Dashboards |
 | **Pi-hole** | Netzwerkweiter Ad-/Tracker-Blocker | DNS-Sinkhole |
 | **SearXNG** | Datenschutzfreundliche Meta-Suchmaschine | Self-Hosted |
+| **LiveKit Meet** | Selbst gehostete Video-Konferenz mit HTTPS/WSS | LiveKit · WebRTC · Next.js · Caddy |
 | **SBB Verbindungen** | ÖV-Fahrplanauskunft mit eigener JSON-API | Flask · Open Data CH · Docker |
 
 Die Seite ist statisches HTML/CSS ohne Abhängigkeiten (`index.html`) und wird über GitHub Pages ausgeliefert.
