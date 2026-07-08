@@ -114,7 +114,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">12</div><div class="l">Dienste</div></div>
+      <div><div class="n">13</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -158,7 +158,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="skilltest">
       <div class="shot mid"><span class="port">:8090</span><img src="shots/skilltest.png" alt="skilltest – Kompetenz-Radar"><span class="badge">Live-Ansicht</span></div>
       <div class="body">
         <h3>skilltest · Kompetenz-Radar</h3>
@@ -265,6 +265,18 @@
           OpenStreetMap-Basis – umschaltbar in einer Oberfläche, mit eigener JSON-API.</p>
         <div class="tags"><span class="tag">Flask</span><span class="tag">Open Data CH</span><span class="tag">OSRM</span><span class="tag">OpenStreetMap</span><span class="tag">Docker</span></div>
         <a class="src" href="https://transport.opendata.ch/" target="_blank" rel="noopener">↗ Open-Data-API</a>
+      </div>
+    </div>
+
+    <div class="card" id="jobportal">
+      <div class="shot"><span class="port">:8445 · HTTPS</span><img src="shots/jobportal.png" alt="Stellenportal – Stellenanzeige mit Bewerbungsformular, Lebenslauf-Upload und Kompetenz-Test-Button"><span class="badge">Live-Ansicht</span></div>
+      <div class="body">
+        <h3>Stellenportal</h3>
+        <p>Job-Board zum Ausschreiben offener Stellen mit Online-Bewerbung: Interessierte bewerben
+          sich direkt im Browser samt Lebenslauf-Upload, ein passwortgeschützter Admin-Bereich
+          verwaltet Stellen und eingehende Bewerbungen. Pro Stelle lässt sich der
+          <a href="#skilltest">Kompetenz-Test</a> verknüpfen – Bewerbende testen vorab ihre Fähigkeiten.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">MariaDB</span><span class="tag">Caddy · HTTPS</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
