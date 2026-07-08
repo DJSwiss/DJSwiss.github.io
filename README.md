@@ -24,6 +24,15 @@ Vorzeige-Seite meiner selbst gehosteten Dienste auf einem Raspberry-Pi-Homeserve
 
 ### Verbindungen Schweiz – Features
 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![OSRM](https://img.shields.io/badge/Routing-OSRM-orange)
+[![Open Data CH](https://img.shields.io/badge/Open%20Data-Schweiz-D8232A)](https://transport.opendata.ch/)
+![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-1F88C0?logo=caddy&logoColor=white)
+
 Ein Dienst, der öffentlichen Verkehr und persönliche Routen unter einer Oberfläche vereint:
 
 - **Vier Modi** in einem UI: 🚆 ÖV · 🚶 zu Fuss · 🚴 Velo · 🚗 Auto.
