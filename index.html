@@ -65,7 +65,16 @@
     border:1px solid var(--line);padding:3px 9px;border-radius:6px;backdrop-filter:blur(3px)}
   .port{position:absolute;top:12px;right:12px;font-size:.72rem;color:var(--acc2);
     font-family:ui-monospace,Menlo,Consolas,monospace;background:rgba(8,20,24,.8);border:1px solid #1d3a3a;
-    padding:3px 9px;border-radius:7px;backdrop-filter:blur(3px)}
+    padding:3px 9px;border-radius:7px;backdrop-filter:blur(3px);z-index:2}
+
+  .shot.dual{display:flex}
+  .shot.dual .half{position:relative;flex:1;height:100%;overflow:hidden;cursor:zoom-in}
+  .shot.dual .half:first-child{border-right:1px solid var(--line)}
+  .shot.dual .half img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s}
+  .card:hover .shot.dual .half img{transform:scale(1.04)}
+  .shot.dual .cap{position:absolute;top:9px;left:9px;font-size:.62rem;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--mut);background:rgba(8,12,20,.72);
+    border:1px solid var(--line);padding:2px 8px;border-radius:5px;backdrop-filter:blur(3px)}
 
   .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
   .card h3{font-size:1.18rem;margin-bottom:8px}
@@ -295,7 +304,10 @@
     </div>
 
     <div class="card" id="textwerk">
-      <div class="shot"><span class="port">:8093</span><img src="shots/textwerk.png" alt="Textwerk – KI-Schreibstudio: Auftrag links, live erzeugte E-Mail in Schweizerdeutsch (Mundart) rechts"><span class="badge">Live-Ansicht</span></div>
+      <div class="shot dual"><span class="port">:8093</span>
+        <div class="half"><img src="shots/textwerk.png" alt="Textwerk – KI-Schreibstudio: Auftrag links, live erzeugte E-Mail in Schweizerdeutsch (Mundart) rechts"><span class="cap">Schreiben</span></div>
+        <div class="half"><img src="shots/textwerk-konto.png" alt="Textwerk – Konto-Seite: API-Token anzeigen/kopieren, Passwort ändern, Konto löschen"><span class="cap">Konto</span></div>
+        <span class="badge">Live-Ansicht</span></div>
       <div class="body">
         <h3>Textwerk · KI-Schreibstudio</h3>
         <p>Erzeugt fertige Texte aus ein paar Stichworten – E-Mails, Artikel, Briefe, Social-Posts,
@@ -303,7 +315,7 @@
           und echtem Schweizerdeutsch/Mundart) sind frei wählbar, die Ausgabe erscheint
           <strong>live tippend</strong> im Browser und lässt
           sich direkt bearbeiten. Auch bestehender Text wird auf Wunsch umgeschrieben. Mehrbenutzerfähig
-          mit eigenem Archiv und token-basierter REST-API.</p>
+          mit eigenem Archiv, Konto-Selbstverwaltung (API-Token, Passwort, Löschen) und token-basierter REST-API.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">Streaming</span><span class="tag">SQLite</span><span class="tag">Multiuser</span></div>
       </div>
     </div>
