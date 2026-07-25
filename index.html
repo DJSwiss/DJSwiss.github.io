@@ -69,7 +69,7 @@
 
   .shot.dual{display:flex}
   .shot.dual .half{position:relative;flex:1;height:100%;overflow:hidden;cursor:zoom-in}
-  .shot.dual .half:first-child{border-right:1px solid var(--line)}
+  .shot.dual .half:not(:last-child){border-right:1px solid var(--line)}
   .shot.dual .half img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s}
   .card:hover .shot.dual .half img{transform:scale(1.04)}
   .shot.dual .cap{position:absolute;top:9px;left:9px;font-size:.62rem;letter-spacing:.07em;
@@ -306,17 +306,19 @@
     <div class="card" id="textwerk">
       <div class="shot dual"><span class="port">:8093</span>
         <div class="half"><img src="shots/textwerk.png" alt="Textwerk – KI-Schreibstudio: Auftrag links, live erzeugte E-Mail in Schweizerdeutsch (Mundart) rechts"><span class="cap">Schreiben</span></div>
+        <div class="half"><img src="shots/textwerk-tones.png" alt="Textwerk – Tonfall-Creator: eigenen Tonfall per KI aus dem Namen interpretieren oder aus Beispiel lernen, mit Live-Vorschau; darunter gespeicherte Tonfälle"><span class="cap">Tonfälle</span></div>
         <div class="half"><img src="shots/textwerk-konto.png" alt="Textwerk – Konto-Seite: API-Token anzeigen/kopieren, Passwort ändern, Konto löschen"><span class="cap">Konto</span></div>
         <span class="badge">Live-Ansicht</span></div>
       <div class="body">
         <h3>Textwerk · KI-Schreibstudio</h3>
         <p>Erzeugt fertige Texte aus ein paar Stichworten – E-Mails, Artikel, Briefe, Social-Posts,
-          Reden oder Geschichten. Textart, Tonfall, Länge und Sprache (inkl. Schweizer Hochdeutsch
-          und echtem Schweizerdeutsch/Mundart) sind frei wählbar, die Ausgabe erscheint
-          <strong>live tippend</strong> im Browser und lässt
-          sich direkt bearbeiten. Auch bestehender Text wird auf Wunsch umgeschrieben. Mehrbenutzerfähig
-          mit eigenem Archiv, Konto-Selbstverwaltung (API-Token, Passwort, Löschen) und token-basierter REST-API.</p>
-        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">Streaming</span><span class="tag">SQLite</span><span class="tag">Multiuser</span></div>
+          Reden oder Geschichten, <strong>live tippend</strong> im Browser und direkt editierbar.
+          Sprache frei wählbar inkl. Schweizer Hochdeutsch und echtem Mundart. Highlight: <strong>eigene
+          Tonfälle</strong> – die KI interpretiert sie aus einem Stichwort oder <em>lernt</em> sie aus
+          einem Beispieltext, mit Live-Vorschau. Entwürfe lassen sich als .txt/.md/.docx exportieren und
+          weiterschreiben. Mehrbenutzerfähig mit <strong>Rollen/Admin</strong> (Owner per Konfiguration),
+          Konto-Selbstverwaltung und token-basierter REST-API.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">Streaming</span><span class="tag">MariaDB</span><span class="tag">Rollen</span><span class="tag">Multiuser</span></div>
       </div>
     </div>
 
