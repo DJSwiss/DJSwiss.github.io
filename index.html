@@ -172,8 +172,11 @@
       <div class="body">
         <h3>skilltest · Kompetenz-Radar</h3>
         <p>Adaptiver Kompetenztest für Menschen: misst Stärken über sieben Gebiete, mit KI-Lehrer,
-          Training, Badges und Bestenlisten. Inklusive Lehrer- und Klassen-Modus für Nachhilfe.</p>
-        <div class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">KI-Tutor</span></div>
+          Training, Badges und Bestenlisten. Inklusive Lehrer- und Klassen-Modus für Nachhilfe.
+          Sämtliche Funktionen sind auch über eine token-authentifizierte <strong>REST-API</strong>
+          (Endpunkte unter /api/, Zugriff per Bearer-Token) nutzbar – mit mehreren benannten
+          Tokens pro Konto, die sich einzeln widerrufen lassen.</p>
+        <div class="tags"><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Chart.js</span><span class="tag">KI-Tutor</span><span class="tag">REST-API</span></div>
       </div>
     </div>
 
@@ -284,8 +287,11 @@
         <p>Job-Board zum Ausschreiben offener Stellen mit Online-Bewerbung: Interessierte bewerben
           sich direkt im Browser samt Lebenslauf-Upload, ein passwortgeschützter Admin-Bereich
           verwaltet Stellen und eingehende Bewerbungen. Pro Stelle lässt sich der
-          <a href="#skilltest">Kompetenz-Test</a> verknüpfen – Bewerbende testen vorab ihre Fähigkeiten.</p>
-        <div class="tags"><span class="tag">FastAPI</span><span class="tag">MariaDB</span><span class="tag">Caddy · HTTPS</span><span class="tag">Docker</span></div>
+          <a href="#skilltest">Kompetenz-Test</a> verknüpfen – Bewerbende testen vorab ihre Fähigkeiten.
+          Über eine <strong>REST-API</strong> (Endpunkte unter /api/) sind veröffentlichte Stellen
+          offen abrufbar; das Verwalten von Stellen und Bewerbungen läuft token-authentifiziert per
+          Bearer-Token, mit mehreren benannten Tokens.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">MariaDB</span><span class="tag">Caddy · HTTPS</span><span class="tag">Docker</span><span class="tag">REST-API</span></div>
       </div>
     </div>
 
