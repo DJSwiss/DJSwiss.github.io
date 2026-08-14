@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">15</div><div class="l">Dienste</div></div>
+      <div><div class="n">16</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -335,6 +335,22 @@
           generiertem Startpasswort, Rollen ändern, Passwörter zurücksetzen. Dazu Konto-Selbstverwaltung
           (API-Token/Passwort) und token-basierte REST-API.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">Streaming</span><span class="tag">MariaDB</span><span class="tag">Rollen</span><span class="tag">Teilen</span><span class="tag">Multiuser</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="steuerwerk">
+      <div class="shot"><span class="port">:8109</span><img src="shots/steuerwerk.png" alt="steuerwerk – eine KI steuert einen vollen virtuellen Linux-Desktop; im Bild Firefox mit dem Wikipedia-Artikel zum Raspberry Pi"><span class="badge">Live-Desktop</span></div>
+      <div class="body">
+        <h3>steuerwerk · Computer Use</h3>
+        <p>Eine KI bedient einen <strong>vollen virtuellen Linux-Desktop</strong>: Sie sieht bei
+          jedem Schritt einen Screenshot und klickt, tippt und navigiert selbst, bis der in
+          Alltagssprache gestellte Auftrag erledigt ist. Desktop samt Browser läuft im Container und
+          ist als <strong>Live-Bild</strong> (noVNC) im Browser sichtbar – man kann jederzeit selbst
+          eingreifen. Das steuernde Modell ist <strong>umschaltbar</strong>: lokal über ein
+          bildfähiges Modell (verbrauchsgemessen) oder Claude mit nativem Computer-Use-Tool für
+          präzise GUI-Aufgaben. Merkt es, dass es sich im Kreis dreht, bricht es ehrlich ab statt
+          blind weiterzuklicken. Mehrbenutzerfähig mit SSO und token-authentifizierter REST-API.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Xvfb + noVNC</span><span class="tag">xdotool</span><span class="tag">Vision-Modell / Claude</span><span class="tag">REST-API</span><span class="tag">Multiuser</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
