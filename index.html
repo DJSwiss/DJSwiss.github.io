@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">17</div><div class="l">Dienste</div></div>
+      <div><div class="n">18</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -247,7 +247,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="searxng">
       <div class="shot mid"><span class="port">:8007</span><img src="shots/searxng.png" alt="SearXNG Suche"><span class="badge">Live-Ansicht</span></div>
       <div class="body">
         <h3>SearXNG</h3>
@@ -365,6 +365,26 @@
           Mehrbenutzerfähig mit SSO und token-authentifizierter REST-API – inklusive
           Datei-Up- und -Download, um der KI Dateien zu geben und Ergebnisse abzuholen.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">Xvfb + noVNC</span><span class="tag">xdotool</span><span class="tag">Vision-Modell / Claude</span><span class="tag">Projekte</span><span class="tag">Zeitplan</span><span class="tag">VNC / RDP</span><span class="tag">REST-API</span><span class="tag">Multiuser</span><span class="tag">Docker</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="metawerk">
+      <div class="shot"><span class="port">:8115</span><img src="shots/metawerk.png" alt="metawerk – geteilte Recherche: die Frage „Was ist der Unterschied zwischen HTTP/2 und HTTP/3?“ mit einer belegten KI-Antwort und nummerierten Quellen"><span class="badge">Antwortmaschine</span></div>
+      <div class="body">
+        <h3>metawerk · KI-Metasuche</h3>
+        <p>Eine Frage rein, eine <strong>belegte Antwort</strong> raus. metawerk durchsucht über die
+          selbst gehostete <a href="#searxng">SearXNG</a>-Metasuche mehrere Suchmaschinen gleichzeitig,
+          sammelt echte Web-Treffer und lässt eine KI daraus eine zusammenhängende Antwort mit
+          <strong>klickbaren Quellenverweisen [1] [2] …</strong> formulieren – jede Sachaussage ist bis
+          zur Originalquelle rückverfolgbar, und nicht belegte Treffer fallen automatisch weg. Statt einer
+          nüchternen Trefferliste entsteht ein Gespräch: <strong>Anschlussfragen</strong> führen dieselbe
+          „Recherche“ fort und kennen den bisherigen Verlauf, samt vorgeschlagener Weiterfragen. Fehlt die
+          Faktenlage, sagt es das ehrlich, statt zu erfinden. Recherchen lassen sich per Link
+          <strong>öffentlich teilen</strong> (nur Ansicht – dieses Bild ist so ein geteilter Link).
+          Mehrbenutzerfähig mit lokalem Login oder <strong>SSO</strong>, zentraler Verbrauchsmessung über
+          den Kern-Proxy und einer token-authentifizierten <strong>REST-API</strong>. Der
+          <code>!frag</code>-Kurzbefehl in den Schwester-Diensten springt direkt hierher.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">SearXNG</span><span class="tag">Inline-Quellen [n]</span><span class="tag">Threads</span><span class="tag">Teilen</span><span class="tag">Kern-Proxy</span><span class="tag">REST-API</span><span class="tag">SSO</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
