@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">18</div><div class="l">Dienste</div></div>
+      <div><div class="n">19</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -385,6 +385,30 @@
           den Kern-Proxy und einer token-authentifizierten <strong>REST-API</strong>. Der
           <code>!frag</code>-Kurzbefehl in den Schwester-Diensten springt direkt hierher.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">SearXNG</span><span class="tag">Inline-Quellen [n]</span><span class="tag">Threads</span><span class="tag">Teilen</span><span class="tag">Kern-Proxy</span><span class="tag">REST-API</span><span class="tag">SSO</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="waescheplan">
+      <div class="shot dual"><span class="port">:8119</span>
+        <div class="half"><img src="shots/waescheplan.png" alt="waescheplan – Wochen-/Maschinenplan: Wäscheladungen nach Waschtag gruppiert, mit Uhrzeit, Waschprogramm, Erinnerung und Wiederholung"><span class="cap">Plan</span></div>
+        <div class="half"><img src="shots/waescheplan-ratgeber.png" alt="waescheplan – KI-Ratgeber „Rotweinflecken aus Baumwolle entfernen“ mit Sicherheitshinweisen, benötigten Mitteln und belegten Schritten [n]"><span class="cap">Ratgeber</span></div>
+        <span class="badge">Wäscheplan</span></div>
+      <div class="body">
+        <h3>waescheplan · Wäscheplan</h3>
+        <p>Der digitale Waschküchen-Assistent. waescheplan sortiert die Wäsche in <strong>Ladungen</strong>
+          und schlägt per KI das sicherste passende <strong>Waschprogramm</strong> vor – Temperatur,
+          Schleuderzahl und Trocknen, abgeleitet aus Wäscheart und den einzelnen Teilen. Jede Ladung
+          durchläuft einen Ablauf (Im Korb → Waschen → Trocknen → Bügeln → Verräumt) und bekommt optional
+          Datum, Uhrzeit, <strong>Erinnerung</strong> und <strong>Wiederholung</strong> – daraus entsteht der
+          <strong>Wochen-/Maschinenplan</strong>. Wiederkehrende Ladungen legen sich nach dem Abschliessen
+          automatisch neu an, und fällige Erinnerungen kommen per <strong>Push (Gotify)</strong> aufs Handy.
+          Ein <strong>KI-Ratgeber</strong> erstellt aus echter Web-Recherche über die selbst gehostete
+          <a href="#searxng">SearXNG</a>-Metasuche belegte Anleitungen zu Flecken, Pflege und Waschen – mit
+          Mitteln, Schritten, <strong>Quellen [n]</strong> und Sicherheitshinweisen. Dazu eine
+          <strong>Bestandsüberwachung</strong> für Waschmittel &amp; Co. Mehrbenutzerfähig mit lokalem Login
+          oder <strong>SSO</strong>, zentraler Verbrauchsmessung über den Kern-Proxy und einer
+          token-authentifizierten <strong>REST-API</strong>.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">KI-Waschprogramm</span><span class="tag">Zeitplan</span><span class="tag">Push · Gotify</span><span class="tag">SearXNG</span><span class="tag">Belege [n]</span><span class="tag">Bestand</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
