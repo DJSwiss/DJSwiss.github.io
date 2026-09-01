@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">21</div><div class="l">Dienste</div></div>
+      <div><div class="n">22</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -460,6 +460,34 @@
           vorbehalten). Mehrbenutzerfähig mit lokalem Login oder <strong>SSO</strong>, zentraler
           Verbrauchsmessung über den Kern-Proxy und einer token-authentifizierten <strong>REST-API</strong>.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">Markdown</span><span class="tag">Wiki-Links</span><span class="tag">Rückverweise</span><span class="tag">Graph</span><span class="tag">Semantische Suche</span><span class="tag">KI-Chat · RAG</span><span class="tag">Belege [n]</span><span class="tag">OKF</span><span class="tag">Geteilte Sammlungen</span><span class="tag">Rollen</span><span class="tag">Teilen per Link</span><span class="tag">Versionierung</span><span class="tag">Diff / Verlauf</span><span class="tag">Wiederherstellen</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="ausflugswerk">
+      <div class="shot dual"><span class="port">:8449</span>
+        <div class="half"><img src="shots/ausflugswerk-form.png" alt="ausflugswerk – Planungsformular mit Reglern für Energielevel, gewünschte Lautstärke und Bewegung sowie Startort-Feld mit Autovervollständigung"><span class="cap">Planen</span></div>
+        <div class="half"><img src="shots/ausflugswerk.png" alt="ausflugswerk – Karte von Luzern mit den vorgeschlagenen Ausflugszielen als Marker"><span class="cap">Karte</span></div>
+        <div class="half"><img src="shots/ausflugswerk-outing.png" alt="ausflugswerk – Ausflugsvorschlag mit Tags (drinnen/draußen, Lautstärke, Bewegung, Distanz, Dauer), Begründung zu Energie und Wetter sowie Kostenschätzung"><span class="cap">Ausflug</span></div>
+        <span class="badge">Ausflugsplaner</span></div>
+      <div class="body">
+        <h3>ausflugswerk · Ausflugsplaner</h3>
+        <p>Man sagt, wie es einem <strong>heute</strong> geht – der Rest richtet sich danach. Über drei
+          Regler stellt man das <strong>Energielevel</strong>, die gewünschte <strong>Lautstärke</strong>
+          (leise ↔ lebhaft) und die gewünschte <strong>Bewegung</strong> (ruhig ↔ sportlich) ein, dazu
+          <strong>Budget</strong>, Personenzahl, Datum und den Startpunkt (per GPS, getippte Koordinaten oder
+          Ortssuche mit <strong>Autovervollständigung</strong>). Daraus baut die KI passende Ausflüge: sie holt
+          <strong>echte Orte</strong> in der Nähe aus <strong>OpenStreetMap</strong> (Overpass), das
+          <strong>Wetter</strong> am Zielort von <strong>Open-Meteo</strong> und wählt Ziele, die zu Zustand,
+          Wetter und Budget passen – jeweils mit <strong>Kostenschätzung</strong> und einer kurzen Begründung
+          „zur Energie“ und „zum Wetter“. Man wählt die <strong>Fortbewegung</strong> (zu Fuss, Velo, Auto oder
+          ÖV); die <strong>Anreise</strong> und grobe Fahrtkosten rechnet der eigene
+          <a href="#sbb">ÖV-&amp;-Routing-Dienst</a> (OSRM-Profile). Jeder Vorschlag liegt auf einer
+          <strong>Leaflet-Karte</strong>, lässt sich <strong>merken</strong> und als <strong>GPX</strong>
+          exportieren: einzelne Route, alle Ziele als Wegpunkte oder eine <strong>verkettete Tagesroute</strong>
+          in einem Track – als <strong>Rundtour</strong> zurück zum Start oder als linearer Hinweg. Mehrbenutzer­fähig
+          mit lokalem Login oder <strong>SSO</strong>, zentraler Verbrauchsmessung über den Kern-Proxy und einer
+          token-authentifizierten <strong>REST-API</strong>.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Energielevel</span><span class="tag">Lautstärke</span><span class="tag">Bewegung</span><span class="tag">Wetter · Open-Meteo</span><span class="tag">Kostenschätzung</span><span class="tag">OSM · Overpass</span><span class="tag">Karte · Leaflet</span><span class="tag">Fortbewegung</span><span class="tag">sbb-Anreise</span><span class="tag">GPX-Export</span><span class="tag">Rundtour</span><span class="tag">Autovervollständigung</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
