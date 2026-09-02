@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">22</div><div class="l">Dienste</div></div>
+      <div><div class="n">23</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -488,6 +488,31 @@
           mit lokalem Login oder <strong>SSO</strong>, zentraler Verbrauchsmessung über den Kern-Proxy und einer
           token-authentifizierten <strong>REST-API</strong>.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">Energielevel</span><span class="tag">Lautstärke</span><span class="tag">Bewegung</span><span class="tag">Wetter · Open-Meteo</span><span class="tag">Kostenschätzung</span><span class="tag">OSM · Overpass</span><span class="tag">Karte · Leaflet</span><span class="tag">Fortbewegung</span><span class="tag">sbb-Anreise</span><span class="tag">GPX-Export</span><span class="tag">Rundtour</span><span class="tag">Autovervollständigung</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+      </div>
+    </div>
+
+    <div class="card" id="spuerwerk">
+      <div class="shot dual"><span class="port">:8127</span>
+        <div class="half"><img src="shots/spuerwerk-form.png" alt="spuerwerk – Eingabemaske „Was zeigt dein Körper?“ mit Freitextfeld samt Spracheingabe-Knopf, Auswahl der betroffenen Körperregion, Dauer, Stärke-Regler und Foto-Upload"><span class="cap">Erfassen</span></div>
+        <div class="half"><img src="shots/spuerwerk.png" alt="spuerwerk – Auswertung von Halsschmerzen mit Dringlichkeit „Selbsthilfe möglich“, Deutung, möglichen Ursachen samt Wahrscheinlichkeit und Hilfevorschlägen mit Quellenbelegen"><span class="cap">Auswertung</span></div>
+        <div class="half"><img src="shots/spuerwerk-muster.png" alt="spuerwerk – erkannte Muster im Verlauf mit möglichen Zusammenhängen wie langen Bildschirmzeiten und einer übergreifenden Empfehlung"><span class="cap">Muster</span></div>
+        <span class="badge">Symptom-Begleiter</span></div>
+      <div class="body">
+        <h3>spuerwerk · Symptom-Begleiter</h3>
+        <p>Man beschreibt in eigenen Worten, was der <strong>Körper zeigt</strong> – dazu die betroffene
+          <strong>Region</strong>, seit wann und die <strong>Stärke</strong> (1–10). Statt zu tippen kann man die
+          Beschwerden auch <strong>einsprechen</strong> oder ein <strong>Foto</strong> der betroffenen Stelle
+          hochladen, das eine <strong>Vision-KI</strong> mitliest. Daraus macht die KI eine vorsichtige
+          <strong>Deutung</strong>, nennt <strong>mögliche Ursachen</strong> mit Wahrscheinlichkeit
+          (bewusst „keine Diagnose“) und gibt konkrete <strong>Hilfevorschläge</strong> – jeweils mit
+          <strong>Quellenbelegen</strong> aus der eigenen <a href="#searxng">Meta-Suche</a>. Sie markiert
+          <strong>Warnzeichen</strong> und schätzt die <strong>Dringlichkeit</strong> ein (von „Selbsthilfe
+          möglich“ bis zum klaren <strong>Notruf 144</strong> bei Alarmzeichen) – als Begleiter,
+          <strong>nicht als Arztersatz</strong>. Jeder Eintrag wird gespeichert, sodass ein <strong>Verlauf</strong>
+          entsteht und die KI wiederkehrende <strong>Muster und mögliche Auslöser</strong> erkennt (etwa Häufungen
+          nach langen Bildschirmtagen). Mehrbenutzerfähig mit lokalem Login oder <strong>SSO</strong>, zentraler
+          Verbrauchsmessung über den Kern-Proxy und einer token-authentifizierten <strong>REST-API</strong>.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Symptome</span><span class="tag">Körperregion</span><span class="tag">Foto · Vision</span><span class="tag">Spracheingabe</span><span class="tag">Selbsthilfe</span><span class="tag">Belege [n]</span><span class="tag">SearXNG</span><span class="tag">Dringlichkeit · 144</span><span class="tag">Verlauf</span><span class="tag">Mustererkennung</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
       </div>
     </div>
 
