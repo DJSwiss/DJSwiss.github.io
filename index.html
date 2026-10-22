@@ -123,7 +123,7 @@
     <p class="lead">Eine Sammlung selbst gehosteter Dienste – von lokalen KI-Agenten über Buchhaltung
       und Smart Home bis zu adaptivem Lernen. Alles containerisiert, datenschutzfreundlich und offline-fähig.</p>
     <div class="meta">
-      <div><div class="n">24</div><div class="l">Dienste</div></div>
+      <div><div class="n">25</div><div class="l">Dienste</div></div>
       <div><div class="n">Docker</div><div class="l">Compose-Stacks</div></div>
       <div><div class="n">Ollama</div><div class="l">Lokale KI</div></div>
       <div><div class="n">100%</div><div class="l">Self-Hosted</div></div>
@@ -546,6 +546,38 @@
       </div>
     </div>
 
+
+    <div class="card" id="aemtliplan">
+      <div class="shot dual"><span class="port">:8197</span>
+        <div class="half"><img src="shots/aemtliplan.png" alt="Ämtliplan – Wochenansicht mit dem heutigen Tag: Ämtli wie Abwaschen und Katzenklo mit Person, Farbe und Aufwand in Minuten, Haken zum Abhaken, Erledigtes durchgestrichen, Übersprungenes markiert"><span class="cap">Woche</span></div>
+        <div class="half"><img src="shots/aemtliplan-druck.png" alt="Ämtliplan – Druckplan einer Woche als Tabelle Personen mal Wochentage mit Kästchen zum Abhaken, für den Kühlschrank"><span class="cap">Druck</span></div>
+        <div class="half"><img src="shots/aemtliplan-bilanz.png" alt="Ämtliplan – Bilanz: geleistete und geplante Minuten je Person als Balken, mit Strich für den fairen Anteil nach Gewicht und dem Hinweis zu viel, zu wenig oder ausgeglichen"><span class="cap">Fair</span></div>
+        <span class="badge">Ämtli-Planer</span></div>
+      <div class="body">
+        <h3>aemtliplan · Ämtli fair verteilen</h3>
+        <p>Wer ist diese Woche mit dem Bad dran? Der <strong>Ämtliplan</strong> beantwortet das für
+          WG und Familie, ohne dass jemand Buch führen muss. Erfasst werden <strong>Ämtli</strong> mit
+          Rhythmus (täglich, wöchentlich, alle zwei Wochen, monatlich oder alle n Tage), Aufwand in
+          <strong>Minuten</strong> und auf Wunsch, wer überhaupt in Frage kommt, dazu die
+          <strong>Personen</strong>, die auch ohne eigenes Konto mitmachen (Kinder). Ihr
+          <strong>Gewicht</strong> legt den Anteil fest: 0.5 heisst halbe Last. Daraus entsteht
+          der Plan für die nächsten vier Wochen, <strong>fair nach Minuten</strong> statt nach
+          Anzahl: Wer in den letzten vier Wochen mehr getragen hat, bekommt weniger, und wer ein Ämtli
+          zuletzt hatte, kommt beim nächsten Mal eher nicht dran. So <strong>rotiert</strong> der Plan
+          von selbst. <strong>Ferien und Abwesenheiten</strong> nehmen eine Person aus der Verteilung,
+          die anderen springen ein. In der Wochenansicht wird <strong>abgehakt</strong>, getauscht,
+          übersprungen oder „erledigt von …“ vermerkt, denn wer einspringt, bekommt die Minuten
+          gutgeschrieben. Getauschte Termine bleiben beim Neuverteilen stehen. Für den Kühlschrank
+          gibt es den <strong>Druckplan</strong> (A4 quer, mit Kästchen), für die Gerechtigkeit die
+          <strong>Bilanz</strong> mit Ist gegen fairen Anteil. Die <strong>KI</strong> schlägt aus
+          einer kurzen Beschreibung des Haushalts passende Ämtli mit Rhythmus und Aufwand vor;
+          übernommen wird nur, was man ankreuzt. Mehrere Konten teilen sich einen Haushalt
+          (Verwalter und Mitglieder, nur per angenommener <strong>Einladung</strong>), dazu
+          <strong>SSO</strong>, Verbrauchsmessung über den Kern-Proxy und eine token-authentifizierte
+          <strong>REST-API</strong> mit „heute fällig“ für Anzeigen und Sprachassistenten.</p>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">Faire Verteilung</span><span class="tag">Rotation</span><span class="tag">Gewichte</span><span class="tag">Abwesenheiten</span><span class="tag">Druckplan</span><span class="tag">Bilanz</span><span class="tag">KI-Vorschläge</span><span class="tag">Einladungen</span><span class="tag">Kern-Proxy</span><span class="tag">SSO</span><span class="tag">REST-API</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+      </div>
+    </div>
   </div>
 
   <section class="stack">
